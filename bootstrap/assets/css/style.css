@@ -1,7 +1,58 @@
-html {
+html,
+body {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4.5rem;
+}
+
+/* Imagem de perfil centralizada e responsiva */
+.profile-img {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+/* Altura e proporção padrão do contêiner da imagem */
+.project-img-wrapper {
+  height: 190px;
+  background-color: #e9ecef; /* Fundo neutro no tema claro */
+  transition: background-color 0.3s ease;
+}
+
+.project-logo {
+  max-height: 130px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Cor de fundo aplicada APENAS no tema escuro */
+[data-bs-theme="dark"] .project-img-wrapper {
+  background-color: #ffffff; /* Fundo branco para destacar as letras escuras */
+}
+@media (min-width: 576px) {
+  .profile-img {
+    max-width: 260px;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-img {
+    max-width: 320px;
+  }
+}
+
+/* Regras para mobile estreito (< 425px) */
+@media (max-width: 425px) {
+  /* Botões em tela cheia para toque fácil */
+  .btn-mobile-full {
+    width: 100% !important;
+  }
+
+  /* Redução sutil de padding nos cards para não comprimir o texto */
+  .card-mobile-compact {
+    padding: 1.25rem !important;
+  }
 }
