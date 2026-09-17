@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeIcon = document.getElementById("theme-icon");
   const htmlTag = document.documentElement;
 
-  // Recupera o tema salvo ou usa a preferência do sistema operacional
+  // 1. Gestão de Tema Claro / Escuro
   const savedTheme = localStorage.getItem("theme");
   const systemPrefersDark = window.matchMedia(
     "(prefers-color-scheme: dark)",
@@ -23,13 +23,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Aplica o tema inicial
   applyTheme(initialTheme);
 
-  // Alterna o tema no clique
   themeToggleBtn.addEventListener("click", () => {
     const currentTheme = htmlTag.getAttribute("data-bs-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    applyTheme(newTheme);
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
   });
+
+  // 2. Fechamento automático do menu colapsável mobile ao clicar em um link
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  const navCollapseElement = document.getElementById("navMenu");
+
+  if (navCollapseElement) {
+    const bsCollapse = new bootstrap.Collapse(navCollapseElement, {
+      toggle: false,
+    });
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (navCollapseElement.classList.contains("show")) {
+          bsCollapse.hide();
+        }
+      });
+    });
+  }
 });
