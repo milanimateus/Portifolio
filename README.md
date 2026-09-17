@@ -74,13 +74,13 @@ Também é possível usar qualquer servidor estático equivalente, como a extens
 
 ## Comparação entre as versões
 
-| Aspecto | Bootstrap | Tailwind CSS |
-| --- | --- | --- |
-| Estilização | Componentes e classes prontas do Bootstrap | Classes utilitárias diretamente no HTML |
-| Tema | Atributo `data-bs-theme` | Classe `dark` no elemento `<html>` |
-| Menu mobile | Componente Collapse do Bootstrap | Controle manual com JavaScript e classe `hidden` |
-| JavaScript | Bootstrap Bundle e script próprio | Script próprio |
-| Customização | CSS adicional em `assets/css/style.css` | Classes utilitárias e CSS adicional mínimo |
+| Aspecto      | Bootstrap                                  | Tailwind CSS                                     |
+| ------------ | ------------------------------------------ | ------------------------------------------------ |
+| Estilização  | Componentes e classes prontas do Bootstrap | Classes utilitárias diretamente no HTML          |
+| Tema         | Atributo `data-bs-theme`                   | Classe `dark` no elemento `<html>`               |
+| Menu mobile  | Componente Collapse do Bootstrap           | Controle manual com JavaScript e classe `hidden` |
+| JavaScript   | Bootstrap Bundle e script próprio          | Script próprio                                   |
+| Customização | CSS adicional em `assets/css/style.css`    | Classes utilitárias e CSS adicional mínimo       |
 
 ## Observações
 
